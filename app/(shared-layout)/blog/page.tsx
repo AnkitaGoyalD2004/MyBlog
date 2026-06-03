@@ -9,8 +9,7 @@ import { cacheLife, cacheTag } from "next/cache"
 import Image from "next/image"
 import Link from "next/link"
 
-// export const dynamic = "force-static";
-// export const dynamic = "force-dynamic";
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
     title: "Blog",
@@ -35,9 +34,9 @@ export default function BlogPage() {
 
 async function LoadBlogList() {
     // await new Promise((resolve) => setTimeout(resolve, 5000))
-    "use cache";
-    cacheLife("hours");
-    cacheTag("blog");
+    // "use cache";
+    // cacheLife("hours");
+    // cacheTag("blog");
     const data = await fetchQuery(api.posts.getPosts)
     return (
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
