@@ -3,7 +3,7 @@
 import { api } from "@/convex/_generated/api";
 import { getToken } from "@/lib/auth-server";
 import { fetchMutation } from "convex/nextjs";
-import { updateTag } from "next/cache";
+import { revalidateTag } from "next/cache";
 import { redirect } from "next/navigation";
 import { postSchema } from "./schemas/blog";
 
@@ -55,6 +55,6 @@ export async function createBLogAction(formData: FormData) {
         }
     }
 
-    updateTag("blog");
+    revalidateTag("blog", "max");
     return redirect("/blog");
 }

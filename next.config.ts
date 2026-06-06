@@ -14,6 +14,14 @@ const nextConfig: NextConfig = {
         hostname: "127.0.0.1",
         protocol: "http",
         port: "3210"
+      },
+      {
+        hostname: "*.convex.cloud",
+        protocol: "https",
+      },
+      {
+        hostname: "*.convex.site",
+        protocol: "https",
       }
     ]
   }
